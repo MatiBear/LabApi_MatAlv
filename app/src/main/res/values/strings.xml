@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LabApi_MatAlv</string>
+    <string name="randomJokeUrl">https://api.humorapi.com/jokes/random?api-key=c8c056772f514c588bd3d690d7352d54</string>
+    <string name="joke_here">Joke here</string>
+    <string name="get_random_joke">Get Random Joke</string>
+    <string name="apirequesttask">ApiRequestTask</string>
+    <string name="raw_api_response">Raw API response: %1$s</string>
 </resources>

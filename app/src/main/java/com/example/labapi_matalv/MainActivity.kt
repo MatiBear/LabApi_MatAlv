@@ -28,9 +28,7 @@ class MainActivity : AppCompatActivity(), ApiCallback {
     }
 
     private fun requestRandomJoke() {
-        //val apiUrl = "https://api.humorapi.com/jokes/search?api-key=0483ff33f77a4c77a7dbb9d1c407ca32&keywords=dog"
-        //val apiUrl = "https://api.humorapi.com/jokes/random?api-key=c8c056772f514c588bd3d690d7352d54"
-        val apiUrl = "https://api.humorapi.com/jokes/random?api-key=c8c056772f514c588bd3d690d7352d54"
+        val apiUrl = getString(R.string.randomJokeUrl)
         val apiRequestTask = ApiRequestTask(this)
         apiRequestTask.execute(apiUrl)
     }
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity(), ApiCallback {
     override fun onApiResult(result: String) {
         // Handle the API response in the UI thread
         if (result.isNotBlank()) {
-            Log.d("ApiRequestTask", "Raw API response: $result")  // Add this line for logging
+            Log.d(getString(R.string.apirequesttask), getString(R.string.raw_api_response, result))  // Add this line for logging
             try {
                 // Assuming the response is in JSON format, parse it and extract the joke
                 val jsonResponse = JSONObject(result)
